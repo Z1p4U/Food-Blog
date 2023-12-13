@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background-color: rgb(255, 251, 247)">
+    <!-- nav-bar -->
+    <div
+      class="h-16 fixed top-0 left-0 right-0 z-[200]"
+      style="background-color: bisque"
+    >
+      <div
+        class="container mx-auto px-10 flex h-16 justify-between items-center align-middle"
+      >
+        <a href="index.html"
+          ><img
+            src="https://www.vasterad.com/themes/chow_html/images/logo.png"
+            alt="icon"
+            class="w-16 md:w-full"
+        /></a>
+
+        <div
+          class="hidden md:flex justify-center items-center align-middle gap-5 nav text-lg"
+        >
+          <a href="blogs.html">
+            <p>Blog</p>
+          </a>
+          <a href="about.html">
+            <p>About</p>
+          </a>
+          <a href="contact.html">
+            <p>Contact Us</p>
+          </a>
+          <a href="accountDetils.html" class="flex items-center align-middle">
+            <p>
+              Profile
+              <i class="fa-regular fa-user ps-1 text-base rounded-full"></i>
+            </p>
+          </a>
+        </div>
+
+        <div class="md:hidden">
+          <i
+            id="menu-icon"
+            class="fa-solid fa-bars px-2 py-2 border border-black rounded-sm"
+            onclick="toggleMenu()"
+          ></i>
+        </div>
+        <div
+          id="menu"
+          style="display: none; background-color: bisque"
+          class="flex flex-col h-fit w-full items-center align-middle fixed top-[60px] left-0 transition-all duration-500"
+        >
+          <a
+            href="index.html"
+            onclick="toggleMenu()"
+            class="w-full py-2 block text-center nav-link"
+            >Home</a
+          >
+          <a
+            href="blogs.html"
+            onclick="toggleMenu()"
+            class="w-full py-2 block text-center nav-link"
+            >Blog</a
+          >
+          <a
+            href="about.html"
+            onclick="toggleMenu()"
+            class="w-full py-2 block text-center nav-link"
+            >About</a
+          >
+          <a
+            href="contact.html"
+            onclick="toggleMenu()"
+            class="w-full py-2 block text-center nav-link"
+            >Contact</a
+          >
+          <a
+            href="accountDetils.html"
+            onclick="toggleMenu()"
+            class="w-full py-2 block text-center nav-link"
+            >Profile</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- nav-bar -->
+
+    <!-- hero -->
+    <div
+      id="controls-carousel"
+      class="relative w-full mt-16 z-[100]"
+      data-carousel="static"
+    >
+      <!-- Slider -->
+      <div class="relative h-56 overflow-hidden md:h-96">
+        <div
+          class="hidden duration-700 ease-in-out"
+          style="
+            background-image: url('https://www.vasterad.com/themes/chow_html/images/sliderA_01.jpg');
+            background-size: cover;
+          "
+          data-carousel-item
+        >
+          <div
+            class="w-full h-full px-20 py-12 md:px-40 md:py-16 flex align-middle items-center md:justify-between hover-text"
+          >
+            <div class="flex flex-col">
+              <p href="blogDetails.html" class="hero-text">
+                Mexican Grilled Corn Recipe
+              </p>
+              <button
+                class="w-20 md:w-40 border border-white px-2 py-3 mt-10 hover:bg-gray-200 hover:text-gray-800 transition-all duration-700"
+              >
+                <p class="text-xs md:text-2xl">View Blog</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="hidden duration-700 ease-in-out"
+          data-carousel-item="active"
+          style="
+            background-image: url('https://www.vasterad.com/themes/chow_html/images/sliderA_02.jpg');
+            background-size: cover;
+          "
+        >
+          <div
+            class="w-full h-full px-20 py-12 md:px-40 md:py-16 flex align-middle items-center md:justify-between hover-text"
+          >
+            <div class="flex flex-col">
+              <p href="blogDetails.html" class="hero-text">
+                Roast Chicken With Lemon Gravy
+              </p>
+              <button
+                class="w-20 md:w-40 border border-white px-2 py-3 mt-10 hover:bg-gray-200 hover:text-gray-800 transition-all duration-700"
+              >
+                <p class="text-xs md:text-2xl">View Blog</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="hidden duration-700 ease-in-out"
+          data-carousel-item
+          style="
+            background-image: url('https://www.vasterad.com/themes/chow_html/images/sliderA_03.jpg');
+            background-size: cover;
+          "
+        >
+          <div
+            class="w-full h-full px-20 py-12 md:px-40 md:py-16 flex align-middle items-center md:justify-between hover-text"
+          >
+            <div class="flex flex-col">
+              <p href="blogDetails.html" class="hero-text">
+                Avocado Melon Salad With Lime Vinaigrette
+              </p>
+              <button
+                class="w-20 md:w-40 border border-white px-2 py-3 mt-10 hover:bg-gray-200 hover:text-gray-800 transition-all duration-700"
+              >
+                <p class="text-xs md:text-2xl">View Blog</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="hidden duration-700 ease-in-out"
+          data-carousel-item
+          style="
+            background-image: url('https://www.vasterad.com/themes/chow_html/images/sliderA_04.jpg');
+            background-size: cover;
+          "
+        >
+          <div
+            class="w-full h-full px-20 py-12 md:px-40 md:py-16 flex align-middle items-center md:justify-between hover-text"
+          >
+            <div class="flex flex-col">
+              <p href="blogDetails.html" class="hero-text">Chunky Beef Stew</p>
+              <button
+                class="w-20 md:w-40 border border-white px-2 py-3 mt-10 hover:bg-gray-200 hover:text-gray-800 transition-all duration-700"
+              >
+                <p class="text-xs md:text-2xl">View Blog</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slider -->
+
+      <!-- Slider controls -->
+      <button
+        onclick="animateElement()"
+        type="button"
+        class="btn absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"
+            />
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+
+      <button
+        onclick="animateElement()"
+        type="button"
+        class="btn absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+      <!-- Slider controls -->
+    </div>
+    <!-- hero -->
+
+    <!-- body -->
+    <div class="container mx-auto mt-12 mb-48">
+      <div class="mx-10 flex justify-start items-center align-middle">
+        <span
+          style="background-color: rgb(255, 246, 234); color: gray"
+          class="text-2xl md:text-4xl font-hairline w-64"
+        >
+          Latest Recipes
+        </span>
+        <hr class="w-full bg-black" />
+      </div>
+
+      <div
+        class="container mx-auto px-5 flex flex-wrap gap-5 justify-center items-center align-middle gap-2 mt-20"
+      >
+        <div id="1" class="shadow-md rounded-md w-full sm:w-72">
+          <img
+            src="https://www.vasterad.com/themes/chow_html/images/recipeThumb-01.jpg"
+            class="w-full h-[300px] md:h-[250px] rounded-t-lg hover-text"
+          />
+          <div class="mx-5 my-6">
+            <a href="blogDetails.html" class="card-text"
+              >Mexican Grilled Corn Recipe</a
+            >
+            <div class="my-3 text-xs text-gray-500">
+              This is a very basic beef stew. It’s easy, delicious and
+              inexpensive to make. While there are hundreds of variations of
+              this traditional recipe, it’s hard to improve on this version’s
+              savory and comforting goodness.
+            </div>
+            <div class="flex justify-start gap-1 align-middle items-center">
+              <i
+                class="fa-regular fa-thumbs-up py-2 text-sm text-gray-500 rounded-md"
+              ></i>
+              <p id="upvote-counter1" class="select-none card-btn">0</p>
+            </div>
+
+            <hr class="" />
+            <div
+              class="flex justify-center items-center align-middle w-full cursor-pointer rounded-md"
+            >
+              <div
+                onclick="toggleUpvote('1')"
+                id="upvote-btn1"
+                class="w-1/2 py-2 text-md text-center text-gray-500 rounded-md like-btn transition-all duration-500"
+              >
+                <i class="fa-regular fa-thumbs-up select-none">
+                  <span class="text-sm"> Like</span></i
+                >
+              </div>
+
+              <i
+                id=""
+                class="fa-regular text-center w-1/2 fa-comment py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+                ><span class="text-sm"> Comment</span></i
+              >
+            </div>
+          </div>
+        </div>
+
+        <div id="2" class="shadow-md rounded-md w-full sm:w-72">
+          <img
+            src="https://www.vasterad.com/themes/chow_html/images/recipeThumb-02.jpg"
+            class="w-full h-[300px] md:h-[250px] rounded-t-lg"
+          />
+          <div class="mx-5 my-6">
+            <a href="blogDetails.html" class="card-text"
+              >Mexican Grilled Corn Recipe</a
+            >
+            <div class="my-3 text-xs text-gray-500">
+              This is a very basic beef stew. It’s easy, delicious and
+              inexpensive to make. While there are hundreds of variations of
+              this traditional recipe, it’s hard to improve on this version’s
+              savory and comforting goodness.
+            </div>
+            <div class="flex justify-start gap-1 align-middle items-center">
+              <i
+                class="fa-regular fa-thumbs-up py-2 text-sm text-gray-500 rounded-md"
+              ></i>
+              <p id="upvote-counter2" class="select-none card-btn">0</p>
+            </div>
+
+            <hr class="" />
+            <div
+              class="flex justify-center items-center align-middle w-full cursor-pointer rounded-md"
+            >
+              <i
+                onclick="toggleUpvote('2')"
+                id="upvote-btn2"
+                class="fa-regular text-center w-1/2 fa-thumbs-up py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+              >
+                <span class="text-sm"> Like</span></i
+              >
+
+              <i
+                id=""
+                class="fa-regular text-center w-1/2 fa-comment py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+                ><span class="text-sm"> Comment</span></i
+              >
+            </div>
+          </div>
+        </div>
+
+        <div id="3" class="shadow-md rounded-md w-full sm:w-72">
+          <img
+            src="https://www.vasterad.com/themes/chow_html/images/recipeThumb-03.jpg"
+            class="w-full h-[300px] md:h-[250px] rounded-t-lg"
+          />
+          <div class="mx-5 my-6">
+            <a href="blogDetails.html" class="card-text"
+              >Mexican Grilled Corn Recipe</a
+            >
+            <div class="my-3 text-xs text-gray-500">
+              This is a very basic beef stew. It’s easy, delicious and
+              inexpensive to make. While there are hundreds of variations of
+              this traditional recipe, it’s hard to improve on this version’s
+              savory and comforting goodness.
+            </div>
+            <div class="flex justify-start gap-1 align-middle items-center">
+              <i
+                class="fa-regular fa-thumbs-up py-2 text-sm text-gray-500 rounded-md"
+              ></i>
+              <p id="upvote-counter3" class="select-none card-btn">0</p>
+            </div>
+
+            <hr class="" />
+            <div
+              class="flex justify-center items-center align-middle w-full cursor-pointer rounded-md"
+            >
+              <i
+                onclick="toggleUpvote('3')"
+                id="upvote-btn3"
+                class="fa-regular text-center w-1/2 fa-thumbs-up py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+              >
+                <span class="text-sm"> Like</span></i
+              >
+
+              <i
+                id=""
+                class="fa-regular text-center w-1/2 fa-comment py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+                ><span class="text-sm"> Comment</span></i
+              >
+            </div>
+          </div>
+        </div>
+
+        <div id="4" class="shadow-md rounded-md w-full sm:w-72">
+          <img
+            src="https://www.vasterad.com/themes/chow_html/images/recipeThumb-04.jpg"
+            class="w-full h-[300px] md:h-[250px] rounded-t-lg"
+          />
+          <div class="mx-5 my-6">
+            <a href="blogDetails.html" class="card-text"
+              >Mexican Grilled Corn Recipe</a
+            >
+            <div class="my-3 text-xs text-gray-500">
+              This is a very basic beef stew. It’s easy, delicious and
+              inexpensive to make. While there are hundreds of variations of
+              this traditional recipe, it’s hard to improve on this version’s
+              savory and comforting goodness.
+            </div>
+            <div class="flex justify-start gap-1 align-middle items-center">
+              <i
+                class="fa-regular fa-thumbs-up py-2 text-sm text-gray-500 rounded-md"
+              ></i>
+              <p id="upvote-counter4" class="select-none card-btn">0</p>
+            </div>
+
+            <hr class="" />
+            <div
+              class="flex justify-center items-center align-middle w-full cursor-pointer rounded-md"
+            >
+              <i
+                onclick="toggleUpvote('4')"
+                id="upvote-btn4"
+                class="fa-regular text-center w-1/2 fa-thumbs-up py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+              >
+                <span class="text-sm"> Like</span></i
+              >
+
+              <i
+                id=""
+                class="fa-regular text-center w-1/2 fa-comment py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+                ><span class="text-sm"> Comment</span></i
+              >
+            </div>
+          </div>
+        </div>
+
+        <div id="5" class="shadow-md rounded-md w-full sm:w-72">
+          <img
+            src="https://www.vasterad.com/themes/chow_html/images/recipeThumb-05.jpg"
+            class="w-full h-[300px] md:h-[250px] rounded-t-lg"
+          />
+          <div class="mx-5 my-6">
+            <a href="blogDetails.html" class="card-text"
+              >Mexican Grilled Corn Recipe</a
+            >
+            <div class="my-3 text-xs text-gray-500">
+              This is a very basic beef stew. It’s easy, delicious and
+              inexpensive to make. While there are hundreds of variations of
+              this traditional recipe, it’s hard to improve on this version’s
+              savory and comforting goodness.
+            </div>
+            <div class="flex justify-start gap-1 align-middle items-center">
+              <i
+                class="fa-regular fa-thumbs-up py-2 text-sm text-gray-500 rounded-md"
+              ></i>
+              <p id="upvote-counter5" class="select-none card-btn">0</p>
+            </div>
+
+            <hr class="" />
+            <div
+              class="flex justify-center items-center align-middle w-full cursor-pointer rounded-md"
+            >
+              <i
+                onclick="toggleUpvote('5')"
+                id="upvote-btn5"
+                class="fa-regular text-center w-1/2 fa-thumbs-up py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+              >
+                <span class="text-sm"> Like</span></i
+              >
+
+              <i
+                id=""
+                class="fa-regular text-center w-1/2 fa-comment py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+                ><span class="text-sm"> Comment</span></i
+              >
+            </div>
+          </div>
+        </div>
+
+        <div id="6" class="shadow-md rounded-md w-full sm:w-72">
+          <img
+            src="https://www.vasterad.com/themes/chow_html/images/recipeThumb-06.jpg"
+            class="w-full h-[300px] md:h-[250px] rounded-t-lg"
+          />
+          <div class="mx-5 my-6">
+            <a href="blogDetails.html" class="card-text"
+              >Mexican Grilled Corn Recipe</a
+            >
+            <div class="my-3 text-xs text-gray-500">
+              This is a very basic beef stew. It’s easy, delicious and
+              inexpensive to make. While there are hundreds of variations of
+              this traditional recipe, it’s hard to improve on this version’s
+              savory and comforting goodness.
+            </div>
+            <div class="flex justify-start gap-1 align-middle items-center">
+              <i
+                class="fa-regular fa-thumbs-up py-2 text-sm text-gray-500 rounded-md"
+              ></i>
+              <p id="upvote-counter6" class="select-none card-btn">0</p>
+            </div>
+
+            <hr class="" />
+            <div
+              class="flex justify-center items-center align-middle w-full cursor-pointer rounded-md"
+            >
+              <i
+                onclick="toggleUpvote('6')"
+                id="upvote-btn6"
+                class="fa-regular text-center w-1/2 fa-thumbs-up py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+              >
+                <span class="text-sm"> Like</span></i
+              >
+
+              <i
+                id=""
+                class="fa-regular text-center w-1/2 fa-comment py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+                ><span class="text-sm"> Comment</span></i
+              >
+            </div>
+          </div>
+        </div>
+
+        <div id="7" class="shadow-md rounded-md w-full sm:w-72">
+          <img
+            src="https://www.vasterad.com/themes/chow_html/images/recipeThumb-07.jpg"
+            class="w-full h-[300px] md:h-[250px] rounded-t-lg"
+          />
+          <div class="mx-5 my-6">
+            <a href="blogDetails.html" class="card-text"
+              >Mexican Grilled Corn Recipe</a
+            >
+            <div class="my-3 text-xs text-gray-500">
+              This is a very basic beef stew. It’s easy, delicious and
+              inexpensive to make. While there are hundreds of variations of
+              this traditional recipe, it’s hard to improve on this version’s
+              savory and comforting goodness.
+            </div>
+            <div class="flex justify-start gap-1 align-middle items-center">
+              <i
+                class="fa-regular fa-thumbs-up py-2 text-sm text-gray-500 rounded-md"
+              ></i>
+              <p id="upvote-counter7" class="select-none card-btn">0</p>
+            </div>
+
+            <hr class="" />
+            <div
+              class="flex justify-center items-center align-middle w-full cursor-pointer rounded-md"
+            >
+              <i
+                onclick="toggleUpvote('7')"
+                id="upvote-btn7"
+                class="fa-regular text-center w-1/2 fa-thumbs-up py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+              >
+                <span class="text-sm"> Like</span></i
+              >
+
+              <i
+                id=""
+                class="fa-regular text-center w-1/2 fa-comment py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+                ><span class="text-sm"> Comment</span></i
+              >
+            </div>
+          </div>
+        </div>
+
+        <div id="8" class="shadow-md rounded-md w-full sm:w-72">
+          <img
+            src="https://www.vasterad.com/themes/chow_html/images/recipeThumb-08.jpg"
+            class="w-full h-[300px] md:h-[250px] rounded-t-lg"
+          />
+          <div class="mx-5 my-6">
+            <a href="blogDetails.html" class="card-text"
+              >Mexican Grilled Corn Recipe</a
+            >
+            <div class="my-3 text-xs text-gray-500">
+              This is a very basic beef stew. It’s easy, delicious and
+              inexpensive to make. While there are hundreds of variations of
+              this traditional recipe, it’s hard to improve on this version’s
+              savory and comforting goodness.
+            </div>
+            <div class="flex justify-start gap-1 align-middle items-center">
+              <i
+                class="fa-regular fa-thumbs-up py-2 text-sm text-gray-500 rounded-md"
+              ></i>
+              <p id="upvote-counter8" class="select-none card-btn">0</p>
+            </div>
+
+            <hr class="" />
+            <div
+              class="flex justify-center items-center align-middle w-full cursor-pointer rounded-md"
+            >
+              <i
+                onclick="toggleUpvote('8')"
+                id="upvote-btn8"
+                class="fa-regular text-center w-1/2 fa-thumbs-up py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+              >
+                <span class="text-sm"> Like</span></i
+              >
+
+              <i
+                id=""
+                class="fa-regular text-center w-1/2 fa-comment py-2 text-md text-gray-500 rounded-md border-gray-500 transition-all duration-500 like-btn select-none"
+                ><span class="text-sm"> Comment</span></i
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- body -->
+
+    <!-- footer -->
+    <div
+      class="h-48 bg-[#333333] px-20 pt-5 text-[#b0b0b0] flex justify-center icon amet"
+    >
+      <div class="col-start-1 col-span-3 md:col-span-1">
+        <p class="text-center text-xl">Stay Connected</p>
+
+        <div
+          class="flex flex-row justify-center items-center align-middle mt-5 text-4xl gap-5"
+        >
+          <i
+            class="fa-brands fa-facebook hover:text-blue-500 transition-all duration-700"
+          ></i>
+          <i
+            class="fa-brands fa-youtube hover:text-red-500 transition-all duration-700"
+          ></i>
+          <i
+            class="fa-brands fa-twitter hover:text-blue-300 transition-all duration-700"
+          ></i>
+          <i
+            class="fa-brands fa-square-x-twitter hover:text-black transition-all duration-700"
+          ></i>
+        </div>
+
+        <div class="mt-5 flex justify-center items-center align-middle">
+          <input
+            type="text"
+            class="h-10 bg-transparent focus:bg-[#33333380] border border-[#b0b0b0]"
+            placeholder="mail@example.com"
+          />
+          <button class="h-10 text-xs px-1 text-white -ms-1 bg-[#8dc63f]">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#2a2a2a] text-[#b0b0b0] py-4 px-20 text-center md:text-end">
+      © Copyright by Me. All Rights Reserved.
+    </div>
+    <!-- footer -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+
+    <!-- Nav Toggler -->
+    <script>
+      function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      }
+    </script>
+    <!-- Nav Toggler -->
+
+    <!-- upvote function -->
+    <script>
+      var items = {};
+
+      function toggleUpvote(itemId) {
+        if (!items[itemId]) {
+          items[itemId] = { upvoted: false, count: 0 };
+        }
+
+        items[itemId].upvoted = !items[itemId].upvoted;
+        items[itemId].count += items[itemId].upvoted ? 1 : -1;
+        updateCounter(itemId);
+        updateIconStyle(itemId);
+      }
+
+      function updateCounter(itemId) {
+        var counterElement = document.getElementById(`upvote-counter${itemId}`);
+        if (counterElement) {
+          counterElement.textContent = items[itemId].count;
+        } else {
+          console.error(`Counter element not found for ${itemId}`);
+        }
+      }
+
+      function updateIconStyle(itemId) {
+        var iconElement = document.getElementById(`upvote-btn${itemId}`);
+        if (iconElement) {
+          iconElement.classList.toggle("text-[#9bd845]", items[itemId].upvoted);
+        } else {
+          console.error(`Icon element not found for ${itemId}`);
+        }
+      }
+    </script>
+    <!-- upvote function -->
+  </body>
+</html>

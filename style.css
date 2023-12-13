@@ -1,0 +1,125 @@
+/* nav */
+.nav a {
+  text-align: center;
+  transition: 0.2s;
+}
+
+.nav a :hover {
+  text-shadow: 3px 3px 3px #8dc63f;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  text-shadow: 3px 3px 3px #8dc63f;
+  transition: 0.2s;
+}
+
+@media (max-width: 768px) {
+  #menu {
+    display: block;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+}
+/* nav */
+
+.hover-text {
+  background-color: #00000088;
+  color: #bebebe;
+}
+
+.detail-font {
+  font-family: Arvo;
+}
+
+.hero-text {
+  font-size: 45px;
+  line-height: 45px;
+  width: 400px;
+  font-family: Arvo;
+}
+
+@media screen and (max-width: 770px) {
+  .hero-text {
+    font-size: 20px;
+    line-height: 20px;
+    width: 250px;
+    font-family: Arvo;
+  }
+}
+
+.card-text {
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 100;
+  font-family: Arvo;
+  color: gray;
+}
+
+/* like */
+#like-counter {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.like-btn:hover {
+  transform: scale(1.1);
+}
+
+.card-btn {
+  font-size: 15px;
+}
+/* like */
+
+/* Blog */
+
+.card:hover .card-box {
+  display: block;
+  transition: 0.5s;
+}
+/* Blog */
+
+/* popup */
+.popup {
+  display: none;
+  position: absolute;
+  width: fit-content;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.popup.active {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.follow-button {
+  /* background-color: #3498db; */
+  color: #fff;
+  padding: 2px 6px;
+  border: 1px solid #8dc63f;
+  color: #8dc63f;
+  width: 85px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.follow-button:hover {
+  background-color: #8dc63f;
+  color: white;
+}
+.follow-button:focus {
+  outline: none;
+}
+
+.follow-button::-webkit-focus-ring-color {
+  outline-color: #8dc63f;
+}
+/* popup */
